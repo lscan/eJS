@@ -1,0 +1,29 @@
+Objects
+ - have prototypes
+   - these are also objects
+ - these acts as if they have properties that they don't have, so long as their prototype has them
+ - simple objects have Object.prototype as their prototype
+
+
+
+
+Constructors
+ - these are functions
+ - their names start with a capital letter
+ - using the new operator you can create a new object
+   - this new object's prototype will be the object found in the constructor function's prototype property
+ - the instanceOf operator will tell you if an object's prototype comes from the constructor
+
+function Rabbit(type) {
+	this.type = type;
+}
+var killerRabbit = new Rabbit('killer');
+
+
+
+
+Polymorphism
+ - It can be useful to specify an interface for an object. This tells people how to interact with the object, and hides the object's details, since it's all encapsulated within the object's interface
+ - Multiple objects can use the same interface. Having different objects exposing the same interface, and then writing code that works on any object with the interface, is called polymorphism.
+ - If using multiple object types, you can make the prototype of your new type derive from an old type, and have the constructor call the old type.
+    - This gives a new object type similar to the old one, but where you can add and override properties.
